@@ -1,0 +1,13 @@
+2019-09-05 18:11:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE *[*] FROM MOVIEDATA WHERE IMDBID = NULL "; expected "identifier"; SQL statement:
+delete * from MOVIEDATA where IMDBID = null [42001-199]
+2019-09-05 18:12:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM MOVIEDATA 
+
+DELETE FROM[*] MOVIEDATA WHERE MOVIEDATA_ID = 66 "; SQL statement:
+SELECT * FROM MOVIEDATA 
+
+delete from MOVIEDATA where MOVIEDATA_ID = 66 [42000-199]
+2019-09-05 19:31:57 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FORM" not found; SQL statement:
+delete form MOVIEDATA [42102-199]
