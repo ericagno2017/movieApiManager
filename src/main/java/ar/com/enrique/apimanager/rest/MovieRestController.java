@@ -37,7 +37,7 @@ public class MovieRestController {
             @ApiResponse(code = 403, message = "Usuario no autorizado")})
     public ResponseEntity<?> findAll(@Context HttpServletRequest request,
                                      @ApiParam(value = "ApiKey") @RequestParam(value = "apikey") String apiKey,
-                                     @ApiParam(value = "nombre de la pelicula") @RequestParam(value = "name", required = false) String name,
+                                     @ApiParam(value = "nombre de la pelicula") @RequestParam(value = "name") String name,
                                      @ApiParam(value = "Tipo de Titulo - movie, series, episode") @RequestParam(value = "tipoTitulo", required = false) String tipoTitulo,
                                      @ApiParam(value = "Año de estreno") @RequestParam(value = "year", required = false) String year,
                                      @ApiParam(value = "Nro de pagina a devolver") @RequestParam(value = "page-number", required = false, defaultValue = "0") String pageNumber,
