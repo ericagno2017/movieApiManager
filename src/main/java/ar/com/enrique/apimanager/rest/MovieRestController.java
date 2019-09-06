@@ -43,8 +43,12 @@ public class MovieRestController {
                                      @ApiParam(value = "Nro de pagina a devolver") @RequestParam(value = "page-number", required = false, defaultValue = "0") String pageNumber,
                                      @ApiParam(value = "Cantidad de resultados a devolver") @RequestParam(value = "page-size", required = false, defaultValue = AppConstants.DEFAULT_PAGE_SIZE) String pageSize) {
 
-        PageResponse<MovieDataVo> result = movieDataService.findAllMovies(new PageRequest(Integer.valueOf(pageNumber), Integer.valueOf(pageSize))
-                                        ,apiKey,  name, tipoTitulo, year);
+        PageResponse<MovieDataVo> result = null;
+
+        if(apiKey != null && name != null) {
+            result = movieDataService.findAllMovies(new PageRequest(Integer.valueOf(pageNumber), Integer.valueOf(pageSize))
+                    , apiKey, name, tipoTitulo, year);
+        }
         if (result==null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
